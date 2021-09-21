@@ -56,27 +56,27 @@ struct VertretungPlanItem: View {
         VStack(alignment: .leading) {
             HStack {
                 StatusLabel(Ausfall: VertretungsStunde.Ausfall)
-                if let _ = VertretungsStunde.Zeitspan! {
+                if let _ = VertretungsStunde.Zeitspan {
                     Divider()
                     Text(VertretungsStunde.Zeitspan!)
                 }
-                if let _ = VertretungsStunde.Fach! {
+                if let _ = VertretungsStunde.Fach {
                     Divider()
                     Text(VertretungsStunde.Fach!)
                 }
-                if let _ = VertretungsStunde.Raum! {
+                if let _ = VertretungsStunde.Raum {
                     Divider()
                     Text(VertretungsStunde.Raum!)
                 }
-                if let _ = VertretungsStunde.Lehrer! {
+                if let _ = VertretungsStunde.Lehrer {
                     Divider()
                     Text(VertretungsStunde.Lehrer!)
                 }
             }
-            if let text = VertretungsStunde.Text1! {
+            if let text = VertretungsStunde.Text1 {
                 Text(text)
             }
-            if let text2 = VertretungsStunde.Text2! {
+            if let text2 = VertretungsStunde.Text2 {
                 Text(text2)
             }
         }.padding(.vertical)
@@ -90,9 +90,9 @@ struct KantAppSettings : View {
         Form{
             Section(header : Text("Klassen")) {
                 Picker(selection: $userstufe, label : Text("Wähle deine Klasse")) {
-                    Text("Elftestufe").tag(VertretungsPlanDataModel.Stufe.Elftestufe as VertretungsPlanDataModel.Stufe?)
-                    Text("Zwölfte Klasse").tag(VertretungsPlanDataModel.Stufe.Zwölftestufe as VertretungsPlanDataModel.Stufe?)
-                    Text("Dreizehnte Klasse").tag(VertretungsPlanDataModel.Stufe.Dreizehntestufe as VertretungsPlanDataModel.Stufe?)
+                    Text("11. Klasse").tag(VertretungsPlanDataModel.Stufe.Elftestufe as VertretungsPlanDataModel.Stufe?)
+                    Text("12. Klasse").tag(VertretungsPlanDataModel.Stufe.Zwölftestufe as VertretungsPlanDataModel.Stufe?)
+                    Text("13. Klasse").tag(VertretungsPlanDataModel.Stufe.Dreizehntestufe as VertretungsPlanDataModel.Stufe?)
                 }
             }
         }

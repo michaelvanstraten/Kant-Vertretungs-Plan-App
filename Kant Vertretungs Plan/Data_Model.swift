@@ -16,7 +16,7 @@ struct VertretungsPlanDataModel {
     private(set) var VertretungsStrunden = Array<VertretungsStunde>()
     
     var UserStufe : Stufe?
-    var VertretungsPlanStatus : VertretungsPlanAppStatus = .NoUnits
+    var Status : VertretungsPlanAppStatus = .NoUnits
     
     struct VertretungsStunde : Identifiable {
         let id : UUID = UUID()
@@ -83,7 +83,7 @@ struct VertretungsPlanDataModel {
         VertretungsStrunden.append(Unit)
     }
     mutating func UpdateStatus(AppStatus : VertretungsPlanAppStatus) {
-        VertretungsPlanStatus = AppStatus
+        Status = AppStatus
     }
 }
 

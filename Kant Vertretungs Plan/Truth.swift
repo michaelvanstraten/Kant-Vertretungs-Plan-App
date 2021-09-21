@@ -28,7 +28,7 @@ class VertretungsplanApp: ObservableObject {
     }
     
     var Status : VertretungsPlanDataModel.VertretungsPlanAppStatus {
-        model.VertretungsPlanStatus
+        model.Status
     }
     
     init () {
@@ -65,9 +65,13 @@ class VertretungsplanApp: ObservableObject {
                 case 4:
                     vertretungsstunde.Lehrer = try? rawstundeelement.text()
                 case 5:
-                    vertretungsstunde.Text1 = try? rawstundeelement.text()
+                    if let vertretungstext1 = try? rawstundeelement.text(), vertretungstext1.count > 5 {
+                        vertretungsstunde.Text1 = vertretungstext1
+                    }
                 case 6:
-                    vertretungsstunde.Text2 = try? rawstundeelement.text()
+                    if let vertretungstext2 = try? rawstundeelement.text(), vertretungstext2.count > 5 {
+                        vertretungsstunde.Text2 = vertretungstext2
+                    }
                 default:
                     continue
                 }
@@ -78,6 +82,7 @@ class VertretungsplanApp: ObservableObject {
     }
     
     func UpdateUnits() {
+        print(model.Status)
         model.UpdateStatus(AppStatus: .Loading)
         DispatchQueue.global(qos : .userInitiated).async { [weak self] in
             if let urlpath = self?.UserStufe?.URLPath {
@@ -97,11 +102,13 @@ class VertretungsplanApp: ObservableObject {
                         DispatchQueue.main.async { [weak self] in
                             self?.model.UpdateStatus(AppStatus: .NoUnits)
                         }
+                        return
                     }
                 } else {
                     DispatchQueue.main.async { [weak self] in
                         self?.model.UpdateStatus(AppStatus: .NoConnection)
                     }
+                    return
                 }
                 DispatchQueue.main.async {
                     self?.model.UpdateStatus(AppStatus: .Idal)
