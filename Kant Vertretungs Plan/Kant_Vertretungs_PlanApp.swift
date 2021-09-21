@@ -9,12 +9,10 @@ import SwiftUI
 
 @main
 struct Kant_Vertretungs_PlanApp: App {
-    let persistenceController = PersistenceController.shared
-    let kantapp = VertretungsPlanApp()
+    let kantapp = VertretungsplanApp()
     var body: some Scene {
         WindowGroup {
-            ContentView(KantApp: kantapp)
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            AppView(KantApp: kantapp)
         }
     }
 }

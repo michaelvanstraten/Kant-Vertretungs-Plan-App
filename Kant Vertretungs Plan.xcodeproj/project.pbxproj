@@ -7,25 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C03489226FA30A70013E8FD /* Truth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C03489126FA30A70013E8FD /* Truth.swift */; };
 		7CA855F226F2167300BB8BDA /* Kant_Vertretungs_PlanApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA855F126F2167300BB8BDA /* Kant_Vertretungs_PlanApp.swift */; };
-		7CA855F426F2167300BB8BDA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA855F326F2167300BB8BDA /* ContentView.swift */; };
+		7CA855F426F2167300BB8BDA /* Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA855F326F2167300BB8BDA /* Views.swift */; };
 		7CA855F626F2167500BB8BDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CA855F526F2167500BB8BDA /* Assets.xcassets */; };
 		7CA855F926F2167500BB8BDA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CA855F826F2167500BB8BDA /* Preview Assets.xcassets */; };
-		7CA855FB26F2167500BB8BDA /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA855FA26F2167500BB8BDA /* Persistence.swift */; };
 		7CA855FE26F2167500BB8BDA /* Kant_Vertretungs_Plan.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7CA855FC26F2167500BB8BDA /* Kant_Vertretungs_Plan.xcdatamodeld */; };
 		7CE4094D26F31AD900A5FDDE /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 7CE4094C26F31AD900A5FDDE /* SwiftSoup */; };
-		7CE4094F26F3A06E00A5FDDE /* VertretungsPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE4094E26F3A06E00A5FDDE /* VertretungsPlan.swift */; };
+		7CE4094F26F3A06E00A5FDDE /* Data_Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE4094E26F3A06E00A5FDDE /* Data_Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7CA855EE26F2167300BB8BDA /* Kant Vertretungs Plan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kant Vertretungs Plan.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C03489126FA30A70013E8FD /* Truth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Truth.swift; sourceTree = "<group>"; };
+		7CA855EE26F2167300BB8BDA /* Kant Vertretungsplan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kant Vertretungsplan.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CA855F126F2167300BB8BDA /* Kant_Vertretungs_PlanApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kant_Vertretungs_PlanApp.swift; sourceTree = "<group>"; };
-		7CA855F326F2167300BB8BDA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		7CA855F326F2167300BB8BDA /* Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views.swift; sourceTree = "<group>"; };
 		7CA855F526F2167500BB8BDA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7CA855F826F2167500BB8BDA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		7CA855FA26F2167500BB8BDA /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		7CA855FD26F2167500BB8BDA /* Kant_Vertretungs_Plan.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Kant_Vertretungs_Plan.xcdatamodel; sourceTree = "<group>"; };
-		7CE4094E26F3A06E00A5FDDE /* VertretungsPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VertretungsPlan.swift; sourceTree = "<group>"; };
+		7CE4094E26F3A06E00A5FDDE /* Data_Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data_Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,7 +51,7 @@
 		7CA855EF26F2167300BB8BDA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7CA855EE26F2167300BB8BDA /* Kant Vertretungs Plan.app */,
+				7CA855EE26F2167300BB8BDA /* Kant Vertretungsplan.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -60,10 +60,10 @@
 			isa = PBXGroup;
 			children = (
 				7CA855F126F2167300BB8BDA /* Kant_Vertretungs_PlanApp.swift */,
-				7CA855F326F2167300BB8BDA /* ContentView.swift */,
-				7CE4094E26F3A06E00A5FDDE /* VertretungsPlan.swift */,
+				7CA855F326F2167300BB8BDA /* Views.swift */,
+				7CE4094E26F3A06E00A5FDDE /* Data_Model.swift */,
+				7C03489126FA30A70013E8FD /* Truth.swift */,
 				7CA855F526F2167500BB8BDA /* Assets.xcassets */,
-				7CA855FA26F2167500BB8BDA /* Persistence.swift */,
 				7CA855FC26F2167500BB8BDA /* Kant_Vertretungs_Plan.xcdatamodeld */,
 				7CA855F726F2167500BB8BDA /* Preview Content */,
 			);
@@ -98,7 +98,7 @@
 				7CE4094C26F31AD900A5FDDE /* SwiftSoup */,
 			);
 			productName = "Kant Vertretungs Plan";
-			productReference = 7CA855EE26F2167300BB8BDA /* Kant Vertretungs Plan.app */;
+			productReference = 7CA855EE26F2167300BB8BDA /* Kant Vertretungsplan.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -154,9 +154,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7CA855FB26F2167500BB8BDA /* Persistence.swift in Sources */,
-				7CA855F426F2167300BB8BDA /* ContentView.swift in Sources */,
-				7CE4094F26F3A06E00A5FDDE /* VertretungsPlan.swift in Sources */,
+				7CA855F426F2167300BB8BDA /* Views.swift in Sources */,
+				7CE4094F26F3A06E00A5FDDE /* Data_Model.swift in Sources */,
+				7C03489226FA30A70013E8FD /* Truth.swift in Sources */,
 				7CA855FE26F2167500BB8BDA /* Kant_Vertretungs_Plan.xcdatamodeld in Sources */,
 				7CA855F226F2167300BB8BDA /* Kant_Vertretungs_PlanApp.swift in Sources */,
 			);
@@ -286,6 +286,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Kant Vertretungs Plan/Preview Content\"";
@@ -304,7 +305,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "Mvs.Kant-Vertretungs-Plan";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Kant Vertretungsplan";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -316,6 +317,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Kant Vertretungs Plan/Preview Content\"";
@@ -334,7 +336,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "Mvs.Kant-Vertretungs-Plan";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Kant Vertretungsplan";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

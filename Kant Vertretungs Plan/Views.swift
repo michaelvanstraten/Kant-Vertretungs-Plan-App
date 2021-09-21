@@ -9,12 +9,12 @@ import SwiftUI
 import SwiftSoup
 import Foundation
 
-struct ContentView: View {
-    @ObservedObject var KantApp : VertretungsPlanApp
+struct AppView: View {
+    @ObservedObject var KantApp : VertretungsplanApp
     var body: some View {
         NavigationView{
             if KantApp.UserStufe != nil {
-                VertretungsPlan(App: KantApp).navigationTitle("Kant App").navigationBarItems(leading: NavigationLink(destination : KantAppSettings(userstufe: $KantApp.UserStufe)) {
+                VertretungsPlan(App: KantApp).navigationTitle("Kant Vertretungsplan").navigationBarItems(leading: NavigationLink(destination : KantAppSettings(userstufe: $KantApp.UserStufe)) {
                     Text("Einstellungen")
                 })
             } else {
@@ -26,7 +26,7 @@ struct ContentView: View {
 
 
 struct VertretungsPlan: View {
-    @ObservedObject var App: VertretungsPlanApp
+    @ObservedObject var App: VertretungsplanApp
     var body: some View {
         VStack{
             List{
@@ -112,9 +112,9 @@ struct StatusLabel: View {
 }
 
 struct ContentView_Previews: PreviewProvider {
-    static var kantapp = VertretungsPlanApp()
+    static var kantapp = VertretungsplanApp()
     static var previews: some View {
-        ContentView(KantApp: kantapp)
+        AppView(KantApp: kantapp)
             .preferredColorScheme(.dark)
             .previewDevice("iPhone 12 Pro")
     }
