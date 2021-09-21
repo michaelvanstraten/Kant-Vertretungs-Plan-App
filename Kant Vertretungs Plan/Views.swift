@@ -32,9 +32,9 @@ struct VertretungsPlan: View {
             List{
                 switch App.Status {
                 case .Loading :
-                    ProgressView()
+                    Text("Wird Geladen ...")
                 case .NoUnits:
-                    Text("Es wurden keine Daten Gefunden")
+                    Text("Keine Vertretungsstunden gefunden")
                 case .NoConnection:
                     Text("Es konnte keine verbindung mit der Kantwebseite aufgebaut werden")
                 default:
@@ -43,9 +43,9 @@ struct VertretungsPlan: View {
                     }
                 }
             }
-            Button("Update") {
+            Button("Aktualisieren") {
                 App.UpdateUnits()
-            }
+            }.scaleEffect(1.2).padding(15)
         }
     }
 }
@@ -79,7 +79,7 @@ struct VertretungPlanItem: View {
             if let text2 = VertretungsStunde.Text2 {
                 Text(text2)
             }
-        }.padding(.vertical)
+        }.padding(10)
     }
 }
 
@@ -90,6 +90,7 @@ struct Settings : View {
         Form{
             Section(header : Text("Klasse")) {
                 Picker(selection: $userstufe, label : Text("Wähle deine Stufe")) {
+//                    Text("7.F").tag(VertretungsPlanDataModel.Stufe.Siebtestufe(.F) as VertretungsPlanDataModel.Stufe?)
                     Text("11. Klasse").tag(VertretungsPlanDataModel.Stufe.Elftestufe as VertretungsPlanDataModel.Stufe?)
                     Text("12. Klasse").tag(VertretungsPlanDataModel.Stufe.Zwölftestufe as VertretungsPlanDataModel.Stufe?)
                     Text("13. Klasse").tag(VertretungsPlanDataModel.Stufe.Dreizehntestufe as VertretungsPlanDataModel.Stufe?)

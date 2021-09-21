@@ -9,12 +9,10 @@ import Foundation
 import SwiftSoup
 
 class VertretungsplanApp: ObservableObject {
+    
     @Published private var model : VertretungsPlanDataModel = VertretungsPlanDataModel()
-    
-    var VertretungsStunden : Array<VertretungsPlanDataModel.VertretungsStunde> {
-        model.VertretungsStrunden
-    }
-    
+    var Status : VertretungsPlanDataModel.VertretungsPlanAppStatus {model.Status}
+    var VertretungsStunden : Array<VertretungsPlanDataModel.VertretungsStunde> {model.VertretungsStrunden}
     var UserStufe : VertretungsPlanDataModel.Stufe? {
         get {
             model.UserStufe
@@ -24,10 +22,6 @@ class VertretungsplanApp: ObservableObject {
             SaveUserStufe()
             UpdateUnits()
         }
-    }
-    
-    var Status : VertretungsPlanDataModel.VertretungsPlanAppStatus {
-        model.Status
     }
     
     init () {
@@ -53,16 +47,35 @@ class VertretungsplanApp: ObservableObject {
                 case 1:
                     vertretungsstunde.Zeitspan = try? rawstundeelement.text()
                 case 2:
-                    vertretungsstunde.Fach = try? rawstundeelement.text()
+                    if let vertretungsfach = try? rawstundeelement.text(){
+                        if let Realvertretungsfach = vertretungsfach.split(separator: "?")[safe : 1] {
+                            vertretungsstunde.Fach = String(Realvertretungsfach)
+                            continue
+                        }
+                        vertretungsstunde.Fach = vertretungsfach
+                    }
                     if let ausfall = try? rawstundeelement.select("s").array(), !ausfall.isEmpty {
                         vertretungsstunde.Ausfall = true
                     } else if let ausfall = try? rawstundeelement.select("font").array(), !ausfall.isEmpty {
                         vertretungsstunde.Ausfall = false
                     }
                 case 3:
-                    vertretungsstunde.Raum = try? rawstundeelement.text()
+                    if let raum = try? rawstundeelement.text() {
+                        vertretungsstunde.Raum = raum
+                        if let Vetretungsraum = raum.split(separator: "?")[safe : 1] {
+                            vertretungsstunde.Raum = String(Vetretungsraum)
+                        }
+                        if raum.contains("zuhause") {
+                            vertretungsstunde.Ausfall = true
+                        }
+                    }
                 case 4:
-                    vertretungsstunde.Lehrer = try? rawstundeelement.text()
+                    if let lehrer = try? rawstundeelement.text() {
+                        vertretungsstunde.Lehrer = lehrer
+                        if let vertretungslehrer = lehrer.split(separator: "?")[safe : 1] {
+                            vertretungsstunde.Lehrer = String(vertretungslehrer)
+                        }
+                    }
                 case 5:
                     if let vertretungstext1 = try? rawstundeelement.text(), vertretungstext1.count > 5 {
                         vertretungsstunde.Text1 = vertretungstext1
@@ -80,7 +93,6 @@ class VertretungsplanApp: ObservableObject {
         return nil
     }
     func UpdateUnits() {
-        print(model.Status)
         model.UpdateStatus(AppStatus: .Loading)
         DispatchQueue.global(qos : .userInitiated).async { [weak self] in
             if let urlpath = self?.UserStufe?.URLPath {
@@ -121,3 +133,4 @@ class VertretungsplanApp: ObservableObject {
         }
     }
 }
+

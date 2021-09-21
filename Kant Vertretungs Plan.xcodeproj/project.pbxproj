@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		7C03489226FA30A70013E8FD /* Truth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C03489126FA30A70013E8FD /* Truth.swift */; };
+		7C6DB10726FA5CA500B383B5 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C6DB10626FA5CA500B383B5 /* WidgetKit.framework */; };
+		7C6DB10926FA5CA500B383B5 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C6DB10826FA5CA500B383B5 /* SwiftUI.framework */; };
+		7C6DB10C26FA5CA500B383B5 /* Kant_Vertretungsplan_Widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6DB10B26FA5CA500B383B5 /* Kant_Vertretungsplan_Widget.swift */; };
+		7C6DB10F26FA5CA700B383B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C6DB10E26FA5CA700B383B5 /* Assets.xcassets */; };
+		7C6DB11126FA5CA700B383B5 /* Kant_Vertretungsplan_Widget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 7C6DB10D26FA5CA500B383B5 /* Kant_Vertretungsplan_Widget.intentdefinition */; };
 		7CA855F226F2167300BB8BDA /* Kant_Vertretungs_PlanApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA855F126F2167300BB8BDA /* Kant_Vertretungs_PlanApp.swift */; };
 		7CA855F426F2167300BB8BDA /* Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA855F326F2167300BB8BDA /* Views.swift */; };
 		7CA855F626F2167500BB8BDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CA855F526F2167500BB8BDA /* Assets.xcassets */; };
@@ -19,6 +24,13 @@
 
 /* Begin PBXFileReference section */
 		7C03489126FA30A70013E8FD /* Truth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Truth.swift; sourceTree = "<group>"; };
+		7C6DB10426FA5CA500B383B5 /* Kant_Vertretungsplan_WidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Kant_Vertretungsplan_WidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C6DB10626FA5CA500B383B5 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		7C6DB10826FA5CA500B383B5 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		7C6DB10B26FA5CA500B383B5 /* Kant_Vertretungsplan_Widget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kant_Vertretungsplan_Widget.swift; sourceTree = "<group>"; };
+		7C6DB10D26FA5CA500B383B5 /* Kant_Vertretungsplan_Widget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = Kant_Vertretungsplan_Widget.intentdefinition; sourceTree = "<group>"; };
+		7C6DB10E26FA5CA700B383B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7C6DB11026FA5CA700B383B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7CA855EE26F2167300BB8BDA /* Kant Vertretungsplan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kant Vertretungsplan.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CA855F126F2167300BB8BDA /* Kant_Vertretungs_PlanApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kant_Vertretungs_PlanApp.swift; sourceTree = "<group>"; };
 		7CA855F326F2167300BB8BDA /* Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views.swift; sourceTree = "<group>"; };
@@ -29,6 +41,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		7C6DB10126FA5CA500B383B5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7C6DB10926FA5CA500B383B5 /* SwiftUI.framework in Frameworks */,
+				7C6DB10726FA5CA500B383B5 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7CA855EB26F2167300BB8BDA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -40,10 +61,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7C6DB10526FA5CA500B383B5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7C6DB10626FA5CA500B383B5 /* WidgetKit.framework */,
+				7C6DB10826FA5CA500B383B5 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7C6DB10A26FA5CA500B383B5 /* Kant_Vertretungsplan_Widget */ = {
+			isa = PBXGroup;
+			children = (
+				7C6DB10B26FA5CA500B383B5 /* Kant_Vertretungsplan_Widget.swift */,
+				7C6DB10D26FA5CA500B383B5 /* Kant_Vertretungsplan_Widget.intentdefinition */,
+				7C6DB10E26FA5CA700B383B5 /* Assets.xcassets */,
+				7C6DB11026FA5CA700B383B5 /* Info.plist */,
+			);
+			path = Kant_Vertretungsplan_Widget;
+			sourceTree = "<group>";
+		};
 		7CA855E526F2167300BB8BDA = {
 			isa = PBXGroup;
 			children = (
 				7CA855F026F2167300BB8BDA /* Kant Vertretungs Plan */,
+				7C6DB10A26FA5CA500B383B5 /* Kant_Vertretungsplan_Widget */,
+				7C6DB10526FA5CA500B383B5 /* Frameworks */,
 				7CA855EF26F2167300BB8BDA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -52,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				7CA855EE26F2167300BB8BDA /* Kant Vertretungsplan.app */,
+				7C6DB10426FA5CA500B383B5 /* Kant_Vertretungsplan_WidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -81,6 +125,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		7C6DB10326FA5CA500B383B5 /* Kant_Vertretungsplan_WidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7C6DB11226FA5CA700B383B5 /* Build configuration list for PBXNativeTarget "Kant_Vertretungsplan_WidgetExtension" */;
+			buildPhases = (
+				7C6DB10026FA5CA500B383B5 /* Sources */,
+				7C6DB10126FA5CA500B383B5 /* Frameworks */,
+				7C6DB10226FA5CA500B383B5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Kant_Vertretungsplan_WidgetExtension;
+			productName = Kant_Vertretungsplan_WidgetExtension;
+			productReference = 7C6DB10426FA5CA500B383B5 /* Kant_Vertretungsplan_WidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		7CA855ED26F2167300BB8BDA /* Kant Vertretungs Plan */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7CA8560126F2167500BB8BDA /* Build configuration list for PBXNativeTarget "Kant Vertretungs Plan" */;
@@ -111,6 +172,9 @@
 				LastSwiftUpdateCheck = 1300;
 				LastUpgradeCheck = 1300;
 				TargetAttributes = {
+					7C6DB10326FA5CA500B383B5 = {
+						CreatedOnToolsVersion = 13.0;
+					};
 					7CA855ED26F2167300BB8BDA = {
 						CreatedOnToolsVersion = 13.0;
 					};
@@ -133,11 +197,20 @@
 			projectRoot = "";
 			targets = (
 				7CA855ED26F2167300BB8BDA /* Kant Vertretungs Plan */,
+				7C6DB10326FA5CA500B383B5 /* Kant_Vertretungsplan_WidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		7C6DB10226FA5CA500B383B5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7C6DB10F26FA5CA700B383B5 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7CA855EC26F2167300BB8BDA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -150,6 +223,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		7C6DB10026FA5CA500B383B5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7C6DB10C26FA5CA500B383B5 /* Kant_Vertretungsplan_Widget.swift in Sources */,
+				7C6DB11126FA5CA700B383B5 /* Kant_Vertretungsplan_Widget.intentdefinition in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7CA855EA26F2167300BB8BDA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -165,6 +247,62 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		7C6DB11326FA5CA700B383B5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_APP_SANDBOX = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Kant_Vertretungsplan_Widget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Kant_Vertretungsplan_Widget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Mvs.Kant-Vertretungsplan-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		7C6DB11426FA5CA700B383B5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_APP_SANDBOX = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Kant_Vertretungsplan_Widget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Kant_Vertretungsplan_Widget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Mvs.Kant-Vertretungsplan-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		7CA855FF26F2167500BB8BDA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -346,6 +484,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		7C6DB11226FA5CA700B383B5 /* Build configuration list for PBXNativeTarget "Kant_Vertretungsplan_WidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7C6DB11326FA5CA700B383B5 /* Debug */,
+				7C6DB11426FA5CA700B383B5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		7CA855E926F2167300BB8BDA /* Build configuration list for PBXProject "Kant Vertretungs Plan" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
