@@ -13,7 +13,7 @@ struct Kant_Vertretungs_PlanApp: App {
     let kantapp = VertretungsPlanApp()
     var body: some Scene {
         WindowGroup {
-            ContentView(KantApp: kantapp, stufe: VertretungsPlanDataModel.Stufe.Elftestufe)
+            ContentView(KantApp: kantapp)
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

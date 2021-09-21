@@ -11,27 +11,36 @@ import Foundation
 
 struct ContentView: View {
     @ObservedObject var KantApp : VertretungsPlanApp
-    @State var stufe : VertretungsPlanDataModel.Stufe?
     var body: some View {
         NavigationView{
-            if stufe == nil {
-                KantAppSettings()
-            } else {
-                VertretungsPlan(App: KantApp).navigationTitle("Kant App").navigationBarItems(leading: NavigationLink(destination : KantAppSettings()) {
+            if KantApp.UserStufe != nil {
+                VertretungsPlan(App: KantApp).navigationTitle("Kant App").navigationBarItems(leading: NavigationLink(destination : KantAppSettings(userstufe: $KantApp.UserStufe)) {
                     Text("Einstellungen")
                 })
+            } else {
+                KantAppSettings(userstufe: $KantApp.UserStufe).navigationBarHidden(true)
             }
         }
     }
 }
+
 
 struct VertretungsPlan: View {
     @ObservedObject var App: VertretungsPlanApp
     var body: some View {
         VStack{
             List{
-                ForEach(App.VertretungsStunden) { Vertretungsstunde in
-                        VertretungPlanItem(VertretungsStunde: Vertretungsstunde)
+                switch App.Status {
+                case .Loading :
+                    ProgressView()
+                case .NoUnits:
+                    Text("Es wurden keine Daten Gefunden")
+                case .NoConnection:
+                    Text("Es konnte keine verbindung mit der Kantwebseite aufgebaut werden")
+                default:
+                    ForEach(App.VertretungsStunden) { Vertretungsstunde in
+                            VertretungPlanItem(VertretungsStunde: Vertretungsstunde)
+                    }
                 }
             }
             Button("Update") {
@@ -47,28 +56,28 @@ struct VertretungPlanItem: View {
         VStack(alignment: .leading) {
             HStack {
                 StatusLabel(Ausfall: VertretungsStunde.Ausfall)
-                if let _ = VertretungsStunde.Zeitspan {
+                if let _ = VertretungsStunde.Zeitspan! {
                     Divider()
                     Text(VertretungsStunde.Zeitspan!)
                 }
-                if let _ = VertretungsStunde.Fach {
+                if let _ = VertretungsStunde.Fach! {
                     Divider()
                     Text(VertretungsStunde.Fach!)
                 }
-                if let _ = VertretungsStunde.Raum {
+                if let _ = VertretungsStunde.Raum! {
                     Divider()
                     Text(VertretungsStunde.Raum!)
                 }
-                if let _ = VertretungsStunde.Lehrer {
+                if let _ = VertretungsStunde.Lehrer! {
                     Divider()
                     Text(VertretungsStunde.Lehrer!)
                 }
             }
-            if let _ = VertretungsStunde.Text1 {
-                Text(VertretungsStunde.Text1!)
+            if let text = VertretungsStunde.Text1! {
+                Text(text)
             }
-            if let _ = VertretungsStunde.Text2 {
-                Text(VertretungsStunde.Text2!)
+            if let text2 = VertretungsStunde.Text2! {
+                Text(text2)
             }
         }.padding(.vertical)
     }
@@ -76,19 +85,14 @@ struct VertretungPlanItem: View {
 
 
 struct KantAppSettings : View {
-    @State private var ausgewähltestufe : VertretungsPlanDataModel.Stufe {
-        get {
-            return VertretungsPlanDataModel.Stufe.Zwölftestufe
-        }
-    }
-    
+    @Binding var userstufe : VertretungsPlanDataModel.Stufe?
     var body: some View {
         Form{
             Section(header : Text("Klassen")) {
-                Picker(selection: $ausgewähltestufe, label : Text("Wähle deine Klasse")) {
-                    ForEach(VertretungsPlanDataModel.Klasse.allCases, id : \.self){ klasse in
-                        Text("7\(klasse.rawValue)").tag(VertretungsPlanDataModel.Stufe.Siebtestufe(klasse))
-                    }
+                Picker(selection: $userstufe, label : Text("Wähle deine Klasse")) {
+                    Text("Elftestufe").tag(VertretungsPlanDataModel.Stufe.Elftestufe as VertretungsPlanDataModel.Stufe?)
+                    Text("Zwölfte Klasse").tag(VertretungsPlanDataModel.Stufe.Zwölftestufe as VertretungsPlanDataModel.Stufe?)
+                    Text("Dreizehnte Klasse").tag(VertretungsPlanDataModel.Stufe.Dreizehntestufe as VertretungsPlanDataModel.Stufe?)
                 }
             }
         }
@@ -110,7 +114,7 @@ struct StatusLabel: View {
 struct ContentView_Previews: PreviewProvider {
     static var kantapp = VertretungsPlanApp()
     static var previews: some View {
-        ContentView(KantApp: kantapp, stufe: VertretungsPlanDataModel.Stufe.Elftestufe)
+        ContentView(KantApp: kantapp)
             .preferredColorScheme(.dark)
             .previewDevice("iPhone 12 Pro")
     }
