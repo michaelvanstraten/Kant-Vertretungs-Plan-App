@@ -14,11 +14,11 @@ struct AppView: View {
     var body: some View {
         NavigationView{
             if KantApp.UserStufe != nil {
-                VertretungsPlan(App: KantApp).navigationTitle("Kant Vertretungsplan").navigationBarItems(leading: NavigationLink(destination : KantAppSettings(userstufe: $KantApp.UserStufe)) {
+                VertretungsPlan(App: KantApp).navigationTitle("Kant Vertretungsplan").navigationBarItems(leading: NavigationLink(destination : Settings(userstufe: $KantApp.UserStufe)) {
                     Text("Einstellungen")
                 })
             } else {
-                KantAppSettings(userstufe: $KantApp.UserStufe).navigationBarHidden(true)
+                Settings(userstufe: $KantApp.UserStufe).navigationBarHidden(true)
             }
         }
     }
@@ -84,12 +84,12 @@ struct VertretungPlanItem: View {
 }
 
 
-struct KantAppSettings : View {
+struct Settings : View {
     @Binding var userstufe : VertretungsPlanDataModel.Stufe?
     var body: some View {
         Form{
-            Section(header : Text("Klassen")) {
-                Picker(selection: $userstufe, label : Text("Wähle deine Klasse")) {
+            Section(header : Text("Klasse")) {
+                Picker(selection: $userstufe, label : Text("Wähle deine Stufe")) {
                     Text("11. Klasse").tag(VertretungsPlanDataModel.Stufe.Elftestufe as VertretungsPlanDataModel.Stufe?)
                     Text("12. Klasse").tag(VertretungsPlanDataModel.Stufe.Zwölftestufe as VertretungsPlanDataModel.Stufe?)
                     Text("13. Klasse").tag(VertretungsPlanDataModel.Stufe.Dreizehntestufe as VertretungsPlanDataModel.Stufe?)

@@ -24,7 +24,6 @@ class VertretungsplanApp: ObservableObject {
             SaveUserStufe()
             UpdateUnits()
         }
-        
     }
     
     var Status : VertretungsPlanDataModel.VertretungsPlanAppStatus {
@@ -33,6 +32,7 @@ class VertretungsplanApp: ObservableObject {
     
     init () {
         GetDefaults()
+        UpdateUnits()
     }
     
     func SaveUserStufe() {
@@ -41,7 +41,6 @@ class VertretungsplanApp: ObservableObject {
             userdefaults.set(data,forKey: "UserStufe")
         }
     }
-    
     private func ParseUnit(rawstunde : Element) -> VertretungsPlanDataModel.VertretungsStunde? {
         if let rawstundeelements = try? rawstunde.select("td").array() {
             var vertretungsstunde = VertretungsPlanDataModel.VertretungsStunde()
@@ -80,7 +79,6 @@ class VertretungsplanApp: ObservableObject {
         }
         return nil
     }
-    
     func UpdateUnits() {
         print(model.Status)
         model.UpdateStatus(AppStatus: .Loading)
