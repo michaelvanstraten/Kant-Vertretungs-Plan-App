@@ -45,9 +45,9 @@ class VertretungsplanApp: ObservableObject {
                         vertretungsstunde.Text1 = hinweiß
                     }
                 case 1:
-                    vertretungsstunde.Zeitspan = try? rawstundeelement.text()
+                    vertretungsstunde.Zeitspan = try? rawstundeelement.select("font").first()?.text()
                 case 2:
-                    if let vertretungsfach = try? rawstundeelement.text(){
+                    if let vertretungsfach = try? rawstundeelement.select("font").first()?.text(){
                         if let Realvertretungsfach = vertretungsfach.split(separator: "?")[safe : 1] {
                             vertretungsstunde.Fach = String(Realvertretungsfach)
                             continue
@@ -60,7 +60,7 @@ class VertretungsplanApp: ObservableObject {
                         vertretungsstunde.Ausfall = false
                     }
                 case 3:
-                    if let raum = try? rawstundeelement.text() {
+                    if let raum = try? rawstundeelement.select("font").first()?.text() {
                         vertretungsstunde.Raum = raum
                         if let Vetretungsraum = raum.split(separator: "?")[safe : 1] {
                             vertretungsstunde.Raum = String(Vetretungsraum)
@@ -70,18 +70,18 @@ class VertretungsplanApp: ObservableObject {
                         }
                     }
                 case 4:
-                    if let lehrer = try? rawstundeelement.text() {
+                    if let lehrer = try? rawstundeelement.select("font").first()?.text() {
                         vertretungsstunde.Lehrer = lehrer
                         if let vertretungslehrer = lehrer.split(separator: "?")[safe : 1] {
                             vertretungsstunde.Lehrer = String(vertretungslehrer)
                         }
                     }
                 case 5:
-                    if let vertretungstext1 = try? rawstundeelement.text(), vertretungstext1.count > 5 {
+                    if let vertretungstext1 = try? rawstundeelement.select("font").first()?.text(), !vertretungstext1.isEmpty {
                         vertretungsstunde.Text1 = vertretungstext1
                     }
                 case 6:
-                    if let vertretungstext2 = try? rawstundeelement.text(), vertretungstext2.count > 5 {
+                    if let vertretungstext2 = try? rawstundeelement.select("font").first()?.text(), !vertretungstext2.isEmpty {
                         vertretungsstunde.Text2 = vertretungstext2
                     }
                 default:

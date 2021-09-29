@@ -36,7 +36,7 @@ struct VertretungsPlan: View {
                 case .NoUnits:
                     Text("Keine Vertretungsstunden gefunden")
                 case .NoConnection:
-                    Text("Es konnte keine verbindung mit der Kantwebseite aufgebaut werden")
+                    Text("Es konnte keine Verbindung mit der Kant-Webseite aufgebaut werden")
                 default:
                     ForEach(App.VertretungsStunden) { Vertretungsstunde in
                             VertretungPlanItem(VertretungsStunde: Vertretungsstunde)
@@ -105,8 +105,8 @@ struct StatusLabel: View {
     var body: some View {
         if let ausfall = Ausfall {
             ZStack {
-                RoundedRectangle(cornerRadius: 10).fill(ausfall ? .red : .green)
-                Text(ausfall ? "Ausfall" : "Vertretung")
+                RoundedRectangle(cornerRadius: 15).fill(ausfall ? .red : .green)
+                Text(ausfall ? "Ausfall" : "Vertretung").padding(2.5).scaleEffect(0.8)
             }
         }
     }
