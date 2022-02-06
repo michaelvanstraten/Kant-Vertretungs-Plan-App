@@ -112,11 +112,12 @@ struct StatusLabel: View {
     }
 }
 
+
 struct ContentView_Previews: PreviewProvider {
     static var kantapp = VertretungsplanApp()
     static var previews: some View {
         AppView(KantApp: kantapp)
             .preferredColorScheme(.dark)
-            .previewDevice("iPhone 12 Pro")
+            .previewDevice("iPhone 13 Pro")
     }
 }
