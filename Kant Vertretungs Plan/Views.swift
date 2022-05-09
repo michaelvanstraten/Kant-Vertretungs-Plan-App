@@ -9,6 +9,7 @@ import SwiftUI
 import SwiftSoup
 import Foundation
 
+
 struct AppView: View {
     @ObservedObject var KantApp : VertretungsplanApp
     var body: some View {
